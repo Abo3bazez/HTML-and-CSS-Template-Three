@@ -1,2 +1,2 @@
 # HTML-and-CSS-Template-Three
-Template Three
+HTML and CSS Template Two
