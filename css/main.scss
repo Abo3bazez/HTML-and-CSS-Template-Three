@@ -291,6 +291,11 @@ animation: up-down-img 1.5s ease-in-out alternate infinite;
 .landing .text {
   flex: 1;
   text-transform: capitalize;
+      text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 @media (max-width: 767px) {
   .landing .text{
@@ -298,12 +303,14 @@ animation: up-down-img 1.5s ease-in-out alternate infinite;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 }
 .landing .text h1{
   font-size: 40px;
   margin: 0;
-  letter-spacing: -2px;
+letter-spacing: 0px;
+    text-align: center;
 }
 @media (max-width: 767px) {
   .landing .text h1{
@@ -591,6 +598,18 @@ animation: up-down-img 1.5s ease-in-out alternate infinite;
   color: white;
   box-shadow: 1px 2px 10px 5px white;
 }
+@media (max-width: 1199px) {
+  .features .passion {
+      position: relative;
+    left: 55.5%;
+}
+}
+@media (max-width: 767px) {
+  .features .passion {
+      position: relative;
+      left: 0;
+}
+}
 // end features
 // start testimonials
 .testimonials {
@@ -641,6 +660,7 @@ width: 130px;
 }
 .testimonials .card div{
       margin-bottom: 10px;
+      display: flex;
 }
 .testimonials .card div i{
   color: #ffc107;
@@ -652,6 +672,19 @@ width: 130px;
 .testimonials .card p{
       color: #777;
     line-height: 1.5;
+}
+.rating {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+}
+.rating span {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+  animation: wavy 1.5s ease-in-out infinite;
+  animation-delay: calc(.1s * var(--i))
 }
 // end testimonials
 // start animation
@@ -713,6 +746,17 @@ width: 130px;
     opacity: 0;
     width: 200%;
     height: 200%;
+  }
+}
+@keyframes wavy {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-6px);
+  }
+  40% {
+    transform: translateY(0px);
   }
 }
 // end animation
