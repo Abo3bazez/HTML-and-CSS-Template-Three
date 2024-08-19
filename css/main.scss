@@ -608,18 +608,51 @@ animation: up-down-img 1.5s ease-in-out alternate infinite;
 .testimonials .card {
   background-color: white;
   padding: 20px;
-
+  border-radius: 15px;
+position: relative;
+}
+.testimonials .card::before {
+      position: absolute;
+    width: 150px;
+    height: 150px;
+    content: "";
+    border-radius: 50%;
+    top: -80px;
+    right: -30px;
+    background-color: $section-background-color;
+}
+.testimonials img {
+        position: absolute;
+width: 130px;
+    height: 130px;
+    top: -70px;
+    right: -20px;
 }
 .testimonials .card h4{
     text-transform: capitalize;
-    margin: 10px 0px;
+    margin: 0px 0px 10px;
+    font-size: 18px;
 }
 .testimonials .card span{
-  
+      font-size: 15px;
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
 }
-.testimonials .card span div{}
-.testimonials .card span div i{}
-.testimonials .card p{}
+.testimonials .card div{
+      margin-bottom: 10px;
+}
+.testimonials .card div i{
+  color: #ffc107;
+    margin-right: 2px;
+}
+.testimonials .card div i.fa-regular {
+  color: black;
+}
+.testimonials .card p{
+      color: #777;
+    line-height: 1.5;
+}
 // end testimonials
 // start animation
 @keyframes up-down-arrow {
