@@ -787,6 +787,113 @@ a {
   padding-left: 20px;
 }
 // end team members
+// start services
+.services {
+  padding-top: $main-padding;
+  padding-bottom: $main-padding;
+  position: relative;
+  background-color: $section-background-color;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .serv {
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 15px rgba(206, 198, 198, 0.449);
+  transition: $main-transtion-duration;
+}
+.services .serv::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 0%;
+  background: $main-color;
+  transition: $main-transtion-duration;
+}
+
+.services .serv:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 2px 15px rgb(206, 198, 198);
+}
+.services .serv:hover::before {
+  width: 100%;
+}
+.services .serv .content {
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.services .serv .content i {
+  font-size: 50px;
+  color: #c4bcbc;
+  padding: 15px 0 25px 0;
+  transition: $main-transtion-duration;
+}
+.services .serv .content h3 {
+  padding: 0;
+  font-size: 21px;
+  color: $main-color;
+  margin-bottom: 30px;
+}
+.services .serv .details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  position: absolute;
+  bottom: 0;
+}
+.services .serv .details::before {
+  content: "";
+  width: 25%;
+  height: 100%;
+  background-color: $main-color;
+  position: absolute;
+}
+.services .serv .details::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: #d5d5d5;
+  left: 60px;
+  clip-path: polygon(25% -1%, 100% 0%, 75% 100%, 0% 101%);
+}
+.services .serv .details h4 {
+  margin: 10px 10px 10px 25px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  z-index: 5;
+  color: white;
+}
+.services .serv .details a {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: $main-color;
+  margin-right: 15px;
+  align-items: center;
+  z-index: 1;
+}
+.services .serv:hover .content i {
+  animation: up-down-arrow 1.2s ease-in-out alternate infinite;
+  color: $main-color;
+}
+// end services
 // start animation
 @keyframes up-down-arrow {
   0%,

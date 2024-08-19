@@ -845,6 +845,141 @@ a {
 .team .card:hover {
   padding-left: 20px; }
 
+.services {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  background-color: #ececec; }
+
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px; }
+
+.services .serv {
+  background-color: white;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  position: relative;
+  -webkit-box-shadow: 0 2px 15px rgba(206, 198, 198, 0.449);
+          box-shadow: 0 2px 15px rgba(206, 198, 198, 0.449);
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.services .serv::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 3px;
+  width: 0%;
+  background: #2196f3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.services .serv:hover {
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-box-shadow: 0 2px 15px #cec6c6;
+          box-shadow: 0 2px 15px #cec6c6; }
+
+.services .serv:hover::before {
+  width: 100%; }
+
+.services .serv .content {
+  background-color: white;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center; }
+
+.services .serv .content i {
+  font-size: 50px;
+  color: #c4bcbc;
+  padding: 15px 0 25px 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.services .serv .content h3 {
+  padding: 0;
+  font-size: 21px;
+  color: #2196f3;
+  margin-bottom: 30px; }
+
+.services .serv .details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #f9f9f9;
+  position: absolute;
+  bottom: 0; }
+
+.services .serv .details::before {
+  content: "";
+  width: 25%;
+  height: 100%;
+  background-color: #2196f3;
+  position: absolute; }
+
+.services .serv .details::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: #d5d5d5;
+  left: 60px;
+  -webkit-clip-path: polygon(25% -1%, 100% 0%, 75% 100%, 0% 101%);
+          clip-path: polygon(25% -1%, 100% 0%, 75% 100%, 0% 101%); }
+
+.services .serv .details h4 {
+  margin: 10px 10px 10px 25px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  z-index: 5;
+  color: white; }
+
+.services .serv .details a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: capitalize;
+  color: #2196f3;
+  margin-right: 15px;
+  align-items: center;
+  z-index: 1; }
+
+.services .serv:hover .content i {
+  -webkit-animation: up-down-arrow 1.2s ease-in-out alternate infinite;
+          animation: up-down-arrow 1.2s ease-in-out alternate infinite;
+  color: #2196f3; }
+
 @-webkit-keyframes up-down-arrow {
   0%,
   10%,
