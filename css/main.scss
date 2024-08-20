@@ -1214,6 +1214,157 @@ a {
   }
 }
 // end events
+// start events
+.pricing {
+  padding-top: $main-padding;
+  padding-bottom: $main-padding;
+  position: relative;
+  background-color: $section-background-color;
+}
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.pricing .container::after,
+.pricing .container::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/dots.png);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+}
+.pricing .container::after {
+  top: 65%;
+  left: 0;
+}
+.pricing .container::before {
+  bottom: 65%;
+  right: 0;
+}
+@media (max-width: 991px) {
+  .pricing .container::after,
+  .pricing .container::before {
+    display: none;
+  }
+}
+.pricing .container .plan {
+  border-radius: 10px;
+  overflow: hidden;
+  // width: 90%;
+  box-shadow: 0 12px 20px 0 #00000021, 0 2px 4px 0 #0000001f;
+  z-index: 5;
+}
+.pricing .container .plan:nth-child(2) {
+  transform: translateY(-30px);
+}
+.pricing .container .plan:nth-child(2)::after {
+  content: "Most Popular";
+  display: flex;
+  position: absolute;
+  text-align: center;
+  width: 150px;
+  height: 30px;
+  background-color: #2196f3;
+  top: 50px;
+  left: 65%;
+  transform: rotate(90deg);
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.pricing .container .plan:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 107px;
+  right: 32px;
+  border: 18px solid;
+  border-color: transparent transparent white transparent;
+  z-index: 4;
+}
+@media (max-width: 1199px) {
+  .pricing .container .plan:nth-child(2)::before {
+    right: 65px;
+  }
+  .pricing .container .plan:nth-child(2) {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 991px) {
+  .pricing .container .plan:nth-child(2)::before {
+    right: 22px;
+  }
+  .pricing .container .plan:nth-child(2) {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 767px) {
+  .pricing .container .plan {
+    width: 80%;
+  }
+}
+.pricing .container .plan .btn {
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+}
+.pricing .container .plan input {
+  padding: 15px 25px;
+  background-color: white;
+  border: 2px solid $main-color;
+  color: $main-color;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: $main-transtion-duration;
+  transition-property: background-color, color;
+}
+.pricing .container .plan .btn input:hover {
+  background-color: $main-color;
+  color: white;
+}
+.pricing .container .plan .head {
+  text-align: center;
+  background-color: white;
+}
+.pricing .container .plan .head h2 {
+  padding: 25px 0;
+}
+.pricing .container .plan .head i {
+  font-size: 60px;
+  color: $main-color;
+}
+.pricing .container .plan .head h3 {
+  padding: 0 0 10px;
+  font-size: 60px;
+  color: $main-color;
+  letter-spacing: 2px;
+}
+.pricing .container .plan .head p {
+  color: #777;
+  text-transform: capitalize;
+  padding: 0 0 20px;
+  font-size: 14px;
+}
+.pricing .container .plan .features {
+  padding: 0;
+}
+.pricing .container .plan .features p {
+  padding: 20px;
+  border-top: 1px solid #d5d5d5;
+}
+.pricing .container .plan .features p span {
+  font-weight: 700;
+  color: $main-color;
+}
+.pricing .container .plan .features p i {
+  padding: 0 10px 0 0;
+}
+// end events
 // start animation
 @keyframes up-down-arrow {
   0%,
