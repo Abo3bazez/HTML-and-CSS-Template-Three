@@ -544,7 +544,7 @@ a {
 .features .box .img-holder::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -40px;
   right: 0;
   border-width: 0px 0px 220px 450px;
   border-style: solid;
@@ -821,6 +821,7 @@ a {
   position: relative;
   box-shadow: 0 2px 15px rgba(206, 198, 198, 0.449);
   transition: $main-transtion-duration;
+  overflow: hidden;
 }
 .services .serv::before {
   content: "";
@@ -871,7 +872,7 @@ a {
 }
 .services .serv .details::before {
   content: "";
-  width: 25%;
+  width: 23%;
   height: 100%;
   background-color: $main-color;
   position: absolute;
@@ -879,14 +880,18 @@ a {
 .services .serv .details::after {
   content: "";
   position: absolute;
-  width: 20%;
-  height: 100%;
+  width: 15%;
+  height: calc(100% + 0.4px);
   background-color: #d5d5d5;
   left: 60px;
-  clip-path: polygon(25% -1%, 100% 0%, 75% 100%, 0% 101%);
+  transform: skewX(335deg);
+  transition: $main-transtion-duration;
+}
+.services .serv:hover .details::after {
+  width: 100%;
 }
 .services .serv .details h4 {
-  margin: 10px 10px 10px 25px;
+  margin: 10px 10px 10px 20px;
   font-size: 22px;
   letter-spacing: 1px;
   z-index: 5;
@@ -894,7 +899,6 @@ a {
 }
 .services .serv .details a {
   display: flex;
-  align-items: center;
   text-transform: capitalize;
   color: $main-color;
   margin-right: 15px;
@@ -1056,7 +1060,160 @@ a {
   }
 }
 // end how it work
+// start events
+.events {
+  padding-top: $main-padding;
+  padding-bottom: $main-padding;
+  position: relative;
+}
 
+.events .container {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.events .container::after,
+.events .container::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/dots.png);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}
+.events .container::after {
+  top: 65%;
+  left: 0;
+}
+.events .container::before {
+  bottom: 65%;
+  right: 0;
+}
+.events .container img {
+  padding: 0;
+  max-width: 450px;
+  flex: 1;
+  z-index: 5;
+}
+@media (max-width: 991px) {
+  .events .container img {
+    display: none;
+  }
+  .events .container::before,
+  .events .container::after {
+    display: none;
+  }
+  .events .container .info p {
+    margin-bottom: 50px;
+  }
+}
+.events .container .info {
+  flex: 1;
+}
+.events .container .info .time {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+.events .container .info .time .unit {
+  border: 1px solid #d5d5d5;
+  border-radius: 10px;
+  transition: $main-transtion-duration;
+}
+.events .container .info .time .unit span {
+  display: block;
+  text-align: center;
+}
+.events .container .info .time .unit span:first-child {
+  font-size: 30px;
+  color: $main-color;
+  padding: 20px 25px;
+  font-weight: 700;
+}
+.events .container .info .time .unit span:last-child {
+  padding: 10px 0;
+  font-size: 14px;
+  border-top: 1px solid #d5d5d5;
+  transition: $main-transtion-duration;
+}
+.events .container .info .time .unit:hover {
+  border: 1px solid $main-color;
+}
+.events .container .info .time .unit:hover span:last-child {
+  border-top: 1px solid $main-color;
+}
+.events .container .info h2 {
+  text-transform: capitalize;
+  text-align: center;
+  padding: 30px;
+  font-size: 30px;
+}
+.events .container .info p {
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.6;
+  color: #777;
+}
+.events .container .subscribe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 100%;
+}
+.events .container .subscribe form {
+  padding: 0;
+  background-color: #eee;
+  padding: 20px 30px;
+  border-radius: 9999px;
+}
+.events .container .subscribe form input[type="email"] {
+  padding: 15px 150px 15px 15px;
+  border: none;
+  border-radius: 99px;
+  margin-right: 25px;
+  caret-color: $main-color;
+}
+@media (max-width: 767px) {
+  .events .container .subscribe form input[type="email"] {
+    margin-right: 0;
+  }
+}
+.events .container .subscribe form input[type="email"]:focus {
+  outline: none;
+}
+.events .container .subscribe form input[type="email"]::placeholder {
+  text-transform: capitalize;
+}
+.events .container .subscribe form input[type="submit"] {
+  padding: 15px;
+  border: none;
+  background-color: $main-color;
+  color: white;
+  border-radius: 999px;
+  font-weight: 700;
+}
+@media (max-width: 576px) {
+  .events .container .subscribe {
+    width: 85%;
+  }
+  .events .container .subscribe form input[type="email"] {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  .events .container .subscribe form {
+    border-radius: 10px;
+  }
+  .events .container .subscribe form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+  }
+  .events .container .subscribe form input[type="email"]::placeholder {
+    text-align: center;
+  }
+}
+// end events
 // start animation
 @keyframes up-down-arrow {
   0%,
