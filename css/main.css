@@ -2182,7 +2182,10 @@ textarea:focus {
 .footer .credits p {
   letter-spacing: 1px;
 }
-
+.footer .credits p a {
+  color: white;
+  cursor: wait;
+}
 @-webkit-keyframes up-down-arrow {
   0%,
   10%,
